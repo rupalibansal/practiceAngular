@@ -3,9 +3,11 @@
     <!-- property binding : wrap the property of HTMLImageElement DOM object in square brackets -->
     <!-- <img [src]="imagePath()" [alt]="selectedUser().name" /> -->
     <img [src]="imagePath" [alt]="name" />
+    <!-- <img [src]="imagePath" [alt]="name()" /> in case its a signal -->
     <!-- 
     string interpolation -->
     <!-- <span>{{ selectedUser.name }}</span> -->
     <span>{{ name }}</span>
+    <!-- <span>{{ name() }}</span> in case of its a signal -->
   </button>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, signal, computed } from '@angular/core';
+import { Component, Input, input, signal, computed } from '@angular/core';
 // import { DUMMY_USERS } from '../dummy-users';
 
 // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
@@ -13,17 +13,21 @@ import { Component, Input, signal, computed } from '@angular/core';
 export class UserComponent {
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
+
+  // avatar = input.required<string>(); in case of signal
+  //name= input.required<string>(); in case of signal
+
   get imagePath() {
     return 'assets/users/' + this.avatar;
   }
 
+  // in case of signal
+  // imagePath = computed(() => {
+  //   return 'assets/users/' + this.avatar;
+  // });
+
   //   selectedUser = signal(DUMMY_USERS[randomIndex]);
   //   imagePath = computed(() => 'assets/users/' + this.selectedUser().avatar);
-
-  // getter
-  // get imagePath() {
-  //   return 'assets/users/' + this.selectedUser.avatar;
-  // }
 
   onSelectUser() {
     // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
