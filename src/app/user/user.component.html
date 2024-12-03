@@ -1,11 +1,8 @@
 <div>
-  <button>
+  <button (click)="onSelectUser()">
     <!-- property binding : wrap the property of HTMLImageElement DOM object in square brackets -->
-    <img
-      [src]="'assets/users/' + selectedUser.avatar"
-      [alt]="selectedUser.name"
-    />
-    <!-- <span>{{ selectedUser.name }}</span>
+    <img [src]="imagePath" [alt]="selectedUser.name" />
+    <!-- 
     string interpolation -->
     <span>{{ selectedUser.name }}</span>
   </button>
